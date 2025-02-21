@@ -4,12 +4,45 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("searchInput");
     const resultsDiv = document.getElementById("results");
 
-    // Fetch data from JSON
-    async function fetchData() {
-        const response = await fetch("./travel_recommendation_api.json");
-        const data = await response.json();
-        return data;
-    }
+    // Sample recommendations data (replace with your JSON file data)
+    const recommendations = {
+        beaches: [
+            {
+                name: "Bora Bora, French Polynesia",
+                imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+                description: "An island known for its stunning turquoise waters and luxurious overwater bungalows."
+            },
+            {
+                name: "Copacabana Beach, Brazil",
+                imageUrl: "https://images.unsplash.com/photo-1519046904884-53103b34b206",
+                description: "A famous beach in Rio de Janeiro, Brazil, with a vibrant atmosphere and scenic views."
+            }
+        ],
+        temples: [
+            {
+                name: "Angkor Wat, Cambodia",
+                imageUrl: "https://images.unsplash.com/photo-1600112356915-fb44b6491d2d",
+                description: "A UNESCO World Heritage site and the largest religious monument in the world."
+            },
+            {
+                name: "Taj Mahal, India",
+                imageUrl: "https://images.unsplash.com/photo-1601459427108-47e20d579a35",
+                description: "An iconic symbol of love and a masterpiece of Mughal architecture."
+            }
+        ],
+        countries: [
+            {
+                name: "Tokyo, Japan",
+                imageUrl: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e",
+                description: "A bustling metropolis blending tradition and modernity, famous for its cherry blossoms and rich culture."
+            },
+            {
+                name: "Kyoto, Japan",
+                imageUrl: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9",
+                description: "Known for its historic temples, gardens, and traditional tea houses."
+            }
+        ]
+    };
 
     // Display recommendations
     function displayRecommendations(data) {
@@ -27,17 +60,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Handle search
-    searchBtn.addEventListener("click", async () => {
+    searchBtn.addEventListener("click", () => {
         const keyword = searchInput.value.toLowerCase();
-        const data = await fetchData();
         let results = [];
 
         if (keyword === "beach" || keyword === "beaches") {
-            results = data.beaches;
+            results = recommendations.beaches;
         } else if (keyword === "temple" || keyword === "temples") {
-            results = data.temples;
+            results = recommendations.temples;
         } else if (keyword === "country" || keyword === "countries") {
-            results = data.countries.flatMap(country => country.cities);
+            results = recommendations.countries;
+        } else {
+            resultsDiv.innerHTML = "<p>No results found. Try searching for 'beach', 'temple', or 'country'.</p>";
+            return;
         }
 
         displayRecommendations(results);
@@ -51,9 +86,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Handle contact form submission
     const contactForm = document.getElementById("contactForm");
-    contactForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        alert("Thank you for contacting us!");
-        contactForm.reset();
-    });
+    if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert("Thank you for contacting us! We'll get back to you shortly.");
+            contactForm.reset();
+        });
+    }
 });
