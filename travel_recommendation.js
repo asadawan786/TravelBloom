@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Fetch data from JSON
     async function fetchData() {
-        const response = await fetch("./assets/travel_recommendation_api.json");
+        const response = await fetch("./travel_recommendation_api.json");
         const data = await response.json();
         return data;
     }
