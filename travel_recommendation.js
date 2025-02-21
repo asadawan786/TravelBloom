@@ -46,8 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Display recommendations
     function displayRecommendations(data) {
-        resultsDiv.innerHTML = "";
+        resultsDiv.innerHTML = ""; // Clear previous results
         data.forEach(item => {
+            // Create a column div with col-lg-6 class
+            const colDiv = document.createElement("div");
+            colDiv.className = "col-lg-6";
+    
+            // Create the recommendation card
             const card = document.createElement("div");
             card.className = "recommendation-card";
             card.innerHTML = `
@@ -55,7 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h3>${item.name}</h3>
                 <p>${item.description}</p>
             `;
-            resultsDiv.appendChild(card);
+    
+            // Append the card to the column div
+            colDiv.appendChild(card);
+    
+            // Append the column div to the results container
+            resultsDiv.appendChild(colDiv);
         });
     }
 

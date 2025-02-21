@@ -135,19 +135,12 @@ body ul {
     color: #333;
 }
 
-#results {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
 
 .recommendation-card {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 300px;
     text-align: center;
     padding: 20px;
 }
