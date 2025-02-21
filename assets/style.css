@@ -15,8 +15,7 @@ body a{
     font-family: "Roboto", serif !important;
 }
 body ul {
-    margin: 0;
-}
+    margin: 0;}
 .main-menu {
   display: flex;
   justify-content: space-between;   
@@ -98,6 +97,7 @@ body ul {
 
 .home-banner {
     display: flex;
+    position: relative;
     align-items: center;   
     background-image: url(../assets/images/home-bg.jpg);
     background-size: cover;
@@ -168,4 +168,140 @@ body ul {
 .recommendation-card p {
     font-size: 16px;
     color: #666;
+}
+
+body ul {
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.social-banner-icon ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    position: absolute;
+    left: 30px;
+    top: 35%;
+}
+
+.social-banner-icon ul li a svg{
+    font-size: 30px;
+    color: #fff;
+}
+
+.about-banner-caption p {
+
+}
+
+.about-banner-desc{
+    background-color: #00000091;
+    color: #fff;
+    padding: 30px 20px;
+}
+
+.about-banner-desc p {
+    font-size: 18px;
+}
+
+.team-card {
+    background-color: #00000091;
+    height: 100%;
+    padding: 30px 20px;
+}
+
+.team-card h2{
+    font-size: 55px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.team-card span {
+    margin-bottom: 20px;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(0, 150, 130);
+    justify-content: center;
+}
+
+.team-card span svg {
+    color: #fff;
+}
+
+.team-card h4{
+    font-size: 19px;
+    color: #fff;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.team-card p {
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #ccc;
+}
+
+.btn-team{
+    padding: 8px 80px;
+    font-size: 16px;
+    background-color: rgb(0, 150, 130);
+    border: 0;
+    font-weight: 500;
+    color: #fff;
+    outline: none;
+    box-shadow: none;
+}
+
+.mb-80{
+    margin-bottom: 80px;
+}
+
+.btn-submit{
+    width: 100%;
+    display: block;
+    padding: 10px;
+    background-color: rgb(0, 150, 130);
+    color: #ffff;
+    outline: none;
+    box-shadow: none;
+    border: 0;
+    font-weight: 500;
+
+}
+
+.contact-form{
+    background-color: #00000091;
+    padding: 20px;
+}
+
+.input-holder label{
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.input-holder input{
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    height: 45px;
+    box-shadow: none;
+    outline: none;
+}
+
+.input-holder textarea {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    box-shadow: none;
+    outline: none;
+}
+
+.input-holder {
+    margin-bottom: 20px;
 }
